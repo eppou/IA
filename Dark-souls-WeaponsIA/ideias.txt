@@ -1,0 +1,3 @@
+1º ideia>> usar busca heuristica com A* para conseguir os melhores resultados
+
+2º ideia>> retornar para algoritmos geneticos e achar uma forma de fazer o cross-over

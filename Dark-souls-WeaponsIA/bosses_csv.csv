@@ -1,0 +1,23 @@
+,Nomes,Locais,Velocidade,Fraqueza,Resistente
+0,Asylum Demon,Undead Asylum,0,none,none
+1,Stray Demon,Undead Asylum,0,none,magic
+2,Taurus Demon,Undead Burg,0,magic,none
+3,Capra Demon,Undead Burg,1,fire,none
+4,Bell Gargoyles,Undead Burg,1,none,none
+5,Gaping Dragon,The Depths,0,fire,magic
+6,Chaos Witch Quelaag,Blighttown,1,lightning,fire
+7,Moonlight Butterfly,Darkroot Garden,1,fire,magic
+8,Great Grey Wolf Sif,Darkroot Garden,1,none,magic
+9,Iron Golem,Sen's Fortress,0,none,fire
+10,Dark Sun Gwyndolin,Anor Londo,1,light,magic
+11,Dragon Slayer Ornstein and Executioner Smough,Anor Londo,1,none,light
+12,Crossbreed Priscilla,Painted World of Ariamis,1,fire,magic
+13,Seath the Scaleless,Crystal Cave,0,magic,magic
+14,Pinwheel,The Catacombs,0,lightning,magic
+15,Gravelord Nito,Tomb of the Giants,1,lightning,none
+16,Four Kings,New Londo Ruins,0,lightning,none
+17,Ceaseless Discharge,Demon Ruins,0,magic,fire
+18,Demon Firesage,Demon Ruins,0,none,fire
+19,Centipede Demon,Demon Ruins,1,magic,fire
+20,Bed of Chaos,Lost Izalith,0,none,fire
+21,"Gwyn, Lord of Cinder",Kiln of the First Flame,1,none,none
