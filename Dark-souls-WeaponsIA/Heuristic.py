@@ -67,7 +67,6 @@ def astar_search(graph, start, goal, heuristic, real_cost):
         open_list.remove((current, current_cost))
         
         if current == goal:
-            print("Chegou no objetivo")
             path = [current]
             return_cost += g_score[current]
             while current in came_from:
@@ -99,10 +98,10 @@ def astar_search(graph, start, goal, heuristic, real_cost):
 
 def goal_weapon(boss, weapons_df):
     best_weapon = None
-    best_score = -1
+    best_score = 635
     for index,weapon in weapons_df.iterrows():
         score = Pontuacao(weapon, boss)
-        if score > best_score:
+        if score < best_score:
             best_weapon = weapon
             best_score = score
     
@@ -135,13 +134,12 @@ for df_name, df in [("Physical", df_physical), ("Lightning", df_lightning), ("Fi
 best_weapon = goal_weapon(boss, weapond_df)
 weapons_data[best_weapon['Name']] = best_weapon
 goal = best_weapon['Name']
-print(f"a melhor arma possivel seria {best_weapon['Name']} com os dados {best_weapon}")
 
 best_weapon_path, custo = astar_search(G, boss['Nomes'], goal , heuristic, real_cost)
 if best_weapon_path:
     best_weapon = best_weapon_path[-1]  
     print(f"A melhor arma para derrotar o chefe {boss['Nomes']} é: {best_weapon} dados da arma")
     print(weapons_data[best_weapon])
-    print(f"o custo foi {custo} o caminho foi {best_weapon_path} ")
+    print(f"o custo foi {custo}  e o caminho foi {best_weapon_path} ")
 else:
     print("Nenhuma arma adequada encontrada.")
