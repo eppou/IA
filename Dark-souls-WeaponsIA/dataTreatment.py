@@ -41,12 +41,13 @@ def dataFrame_creator(df_og):
 
 
 def imprimeGrafo(G):
-    # Desenhe o grafo
-    pos = nx.circular_layout(G)  # Layout para organizar os nós
-    nx.draw(G, pos, with_labels=True, node_color='lightblue', font_weight='bold')
+    pos = nx.spring_layout(G, seed=42, k=2.5, iterations=500) 
+    nx.draw(G, pos, with_labels=True, node_size=1000, node_color="lightblue", font_size=9, font_weight="bold")
+    
+    nx.draw_networkx_edges(G, pos, edge_color="red", width=2)
 
-    # Exiba o grafo (opcional)
-    plt.show()
+    plt.title("Grafo com arestas ligadas a A (Layout spring ajustado)")
+    plt.axis("off")  
 
-    # Salve o grafo como imagem
+    # Exiba o gráfico
     plt.savefig("grafo.png")

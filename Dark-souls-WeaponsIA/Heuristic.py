@@ -74,7 +74,7 @@ def astar_search(graph, start, goal, heuristic, real_cost):
                 return_cost += g_score[current]
                 path.append(current)
             path.reverse()
-            return path, current_cost
+            return path, g_score[goal]/2
         
         for neighbor in graph.neighbors(current):
             custo_total = real_cost(current, neighbor)
@@ -90,11 +90,10 @@ def astar_search(graph, start, goal, heuristic, real_cost):
     min_node, min_score = min([(node, score) for node, score in g_score.items() if node != start], key=lambda x: x[1], default=(None, None))
     path = [min_node]
     while min_node in came_from:
-        return_cost += g_score[min_node]
         min_node = came_from[min_node]
         path.append(min_node)
     path.reverse()
-    return path, return_cost
+    return path, min_score/2
 
 def goal_weapon(boss, weapons_df):
     best_weapon = None
@@ -132,6 +131,7 @@ for df_name, df in [("Physical", df_physical), ("Lightning", df_lightning), ("Fi
             G.add_edge(random_weapon['Name'], weapon_row['Name'], weight=score)
 
 best_weapon = goal_weapon(boss, weapond_df)
+dt.imprimeGrafo(G)
 weapons_data[best_weapon['Name']] = best_weapon
 goal = best_weapon['Name']
 
@@ -140,6 +140,8 @@ if best_weapon_path:
     best_weapon = best_weapon_path[-1]  
     print(f"A melhor arma para derrotar o chefe {boss['Nomes']} é: {best_weapon} dados da arma")
     print(weapons_data[best_weapon])
+    print(f"\nOs dados do chefe são:")
+    print(boss_df.loc[numbem_boss])
     print(f"o custo foi {custo}  e o caminho foi {best_weapon_path} ")
 else:
     print("Nenhuma arma adequada encontrada.")
